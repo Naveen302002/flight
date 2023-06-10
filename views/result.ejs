@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Details</title>
+</head>
+<body>
+  <h1>Flight Details</h1>
+  <% if (flights && flights.length > 0) { %>
+    <ul>
+      <% flights.forEach(flight => { %>
+        <li>
+          <h3>Flight Number: <%= flight.flight.number %></h3>
+          <p>Airline: <%= flight.airline.name %></p>
+          <p>Departure Airport: <%= flight.departure.airport %></p>
+          <p>Arrival Airport: <%= flight.arrival.airport %></p>
+        </li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <p>No flights found for the specified departure city.</p>
+  <% } %>
+</body>
+</html>
